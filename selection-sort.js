@@ -17,4 +17,7 @@ var selectionSort = function(arr){
     return arr;
 };
 var input = [1,2,3,4,3,4,53,3,2,3,3223,34,2,32,645,34,368,99,5,46,7,8,7,9,8,67];
-console.log(selectionSort(input));
+var startTime = new Date().getTime();
+var output = selectionSort(input);
+var endTime = new Date().getTime();
+console.log(output, 'selectionSorted in : '+(endTime-startTime)+' milli seconds');
