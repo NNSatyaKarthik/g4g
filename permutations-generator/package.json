@@ -1,0 +1,15 @@
+{
+  "name": "permutations-generator",
+  "version": "1.0.0",
+  "description": "generates all possible permutations for the given string",
+  "main": "permutationsGenerator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "swap",
+    "generateAllPermutations"
+  ],
+  "author": "NNSatyaKarthik",
+  "license": "ISC"
+}

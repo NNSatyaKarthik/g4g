@@ -7,7 +7,7 @@ module.exports = {
     newStr[id2] = id1c;
     // console.log(newStr.join(''));
     return newStr.join('');
-},
+    },
 
     generateAllPermutations : function(inputString, startIdx){
     // console.log(startIdx, inputString.length-1);
@@ -20,7 +20,7 @@ module.exports = {
     }else if(startIdx === inputString.length){
         console.log(inputString);
     }
-}
+    }
 };
 var input = "ABC";
 var startTime = new Date().getTime();
