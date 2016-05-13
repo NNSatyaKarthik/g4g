@@ -11,20 +11,31 @@ module.exports = {
 
     generateAllPermutations : function(inputString, startIdx){
     // console.log(startIdx, inputString.length-1);
+    var result = [];
     if(inputString.length > 0 && startIdx < inputString.length){
         var endIdx = inputString.length;
         // console.log(inputString);
         for(var i = startIdx; i< endIdx; i++ ){
-            this.generateAllPermutations(this.swap(inputString, startIdx, i ),startIdx+1);
+            var temp = this.generateAllPermutations(this.swap(inputString, startIdx, i ),startIdx+1);
+	    if(temp instanceof String){
+		result.push(temp);
+	    }else if(temp instanceof Array){
+	    	for(a in temp){
+		    result.push(a);
+		}
+	    }
         }
+	return result;
     }else if(startIdx === inputString.length){
-        console.log(inputString);
+        return inputString;
     }
     }
 };
+/*
+// Uncomment this code to see how it works for the sample string
 var input = "ABC";
 var startTime = new Date().getTime();
 this.generateAllPermutations(input, 0);
 var endTime = new Date().getTime();
 console.log('all Permutations of a given String generated in : '+(endTime-startTime)+' milli seconds');
-
+*/

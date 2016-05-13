@@ -1,4 +1,4 @@
-var permutations = require("/permutationsGenerator");
+var permutations = require("permutations-generator");
 
 var getGroups = function(inputStr){
     var groups = {};
@@ -28,7 +28,7 @@ var getAllPalindromePermutations = function(inputStr){
     if(isPalindromePossible(inputStr)){
         var groups = getGroups(inputStr);
         var firstHalf = ""; 
-        var middleChar;
+        var middleChar = "";
         for(var group in groups){
             firstHalf += group.toString().repeat(groups[group]/2);
             if(groups[group] % 2!== 0){
@@ -36,7 +36,9 @@ var getAllPalindromePermutations = function(inputStr){
             }
         }
         console.log(firstHalf, middleChar);
-        console.log(permutations.generateAllPermutations(firstHalf));
+        var firstHalfPermutations = Array.from(new Set(permutations.generateAllPermutations(firstHalf, 0)));
+	console.log("hello baby ", firstHalfPermutations);
+	return null;
     }else{ 
         return;
     }

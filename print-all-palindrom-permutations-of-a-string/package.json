@@ -1,0 +1,14 @@
+{
+  "name": "print-all-palindrom-permutations-of-a-string",
+  "version": "1.0.0",
+  "description": "Prints all palindrome permutations of a string",
+  "main": "all-palindrome-permutations-string.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NNSatyaKarthik",
+  "license": "ISC",
+  "dependencies": {
+    "permutations-generator": "file:../permutations-generator"
+  }
+}
