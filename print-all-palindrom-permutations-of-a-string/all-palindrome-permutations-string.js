@@ -35,13 +35,20 @@ var getAllPalindromePermutations = function(inputStr){
                 middleChar = group.toString();
             }
         }
-        console.log(firstHalf, middleChar);
         var firstHalfPermutations = Array.from(new Set(permutations.generateAllPermutations(firstHalf, 0)));
-	console.log("hello baby ", firstHalfPermutations);
-	return null;
+	var fullPermutations = firstHalfPermutations.map(function(x){
+	    return x + middleChar + x.split('').reverse().join('');
+	});
+	//console.log("hello baby ", fullPermutations);
+	return fullPermutations;
     }else{ 
         return;
     }
 };
 
-console.log(getAllPalindromePermutations("aabbcadad"));
+var input = "aabbcadad";
+var startTime = new Date().getTime();
+var allPermutationsWhichArePalindromes = getAllPalindromePermutations(input);
+var endTime = new Date().getTime();
+console.log("All palindrome permutations for the string "+input+ "are : \n'"+ allPermutationsWhichArePalindromes +"'\n are obtained in :: "+(endTime-startTime) +" milliseconds!" );
+

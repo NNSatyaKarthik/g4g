@@ -26,11 +26,11 @@ var self = module.exports = {
 	return result;
     }
 };
-
+/*
 // Uncomment this code to see how it works for the sample string
 var input = "ABC";
 var startTime = new Date().getTime();
 console.log(self.generateAllPermutations(input, 0));
 var endTime = new Date().getTime();
 console.log('all Permutations of a given String generated in : '+(endTime-startTime)+' milli seconds');
-
+*/
