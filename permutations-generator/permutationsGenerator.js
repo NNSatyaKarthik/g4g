@@ -1,4 +1,5 @@
-module.exports = {
+"use strict";
+var self = module.exports = {
     swap : function(str, id1, id2){
     var id1c = str.charAt(id1);
     var id2c = str.charAt(id2);
@@ -16,26 +17,20 @@ module.exports = {
         var endIdx = inputString.length;
         // console.log(inputString);
         for(var i = startIdx; i< endIdx; i++ ){
-            var temp = this.generateAllPermutations(this.swap(inputString, startIdx, i ),startIdx+1);
-	    if(temp instanceof String){
-		result.push(temp);
-	    }else if(temp instanceof Array){
-	    	for(a in temp){
-		    result.push(a);
-		}
-	    }
+            var temp = self.generateAllPermutations(self.swap(inputString, startIdx, i ),startIdx+1);
+    	    result = result.concat(temp);
         }
-	return result;
     }else if(startIdx === inputString.length){
-        return inputString;
+        result.push(inputString);
     }
+	return result;
     }
 };
-/*
+
 // Uncomment this code to see how it works for the sample string
 var input = "ABC";
 var startTime = new Date().getTime();
-this.generateAllPermutations(input, 0);
+console.log(self.generateAllPermutations(input, 0));
 var endTime = new Date().getTime();
 console.log('all Permutations of a given String generated in : '+(endTime-startTime)+' milli seconds');
-*/
+
